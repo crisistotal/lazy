@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+{% include 'articulos/includes/articulo_menu.html' %}
+<main role="main">
+    <div class="container mb-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-success">Articulos</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <div class="col-md-9 mx-auto">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Tipo</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 {% for articulo in articulo_list|dictsort:"id" reversed %}
+                                <tr>
+                                    <th><a href="{% url 'articulo:articulo' articulo.id articulo.nombre|slugify  %}">{{articulo.nombre}}</a></th> <!--link al articulo-->
+                                    <th>{{articulo.tipo}}</th>
+                                    <th>{{articulo.precio}}</th>
+                                    <th>{{articulo.cantidad}}</th>
+                                </tr>
+                                  {% endfor %}
+                            </tbody>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
