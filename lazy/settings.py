@@ -149,3 +149,12 @@ CKEDITOR_CONFIGS = {
 
 # Auth Redirect
 LOGIN_REDIRECT_URL = 'articulo:articulos'
+LOGOUT_REDIRECT_URL = 'home'
+
+# Emails
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR,"sent_emails")
+else:
+    # Configurar mail para produccion
+    pass
