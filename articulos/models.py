@@ -25,5 +25,14 @@ class Articulo(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+    @property
+    def get_capital(self):
+        capital = self.precio * self.cantidad
+        return capital
+
+
+
+
 
 

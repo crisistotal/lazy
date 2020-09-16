@@ -51,7 +51,7 @@ class ArticuloUpdateView(UpdateView):
 class ArticuloDeleteView(DeleteView):
     model = Articulo
     success_url = reverse_lazy('articulo:articulos')
-    
+
 
 
 
