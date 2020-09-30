@@ -31,6 +31,8 @@ class Articulo(models.Model):
         capital = self.precio * self.cantidad
         return capital
 
+        
+
 
 
 

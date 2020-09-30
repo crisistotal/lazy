@@ -24,12 +24,12 @@
           </button>
           <div class="collapse navbar-collapse" id="ned">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Inicio</a>
-              </li>
+            {% if request.user. is_authenticated %}
+             
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'articulo:articulos' %}">Plantas</a>
               </li>
+
             </ul>
             <ul class="navbar-nav">
               {% if not request.user.is_authenticated %}

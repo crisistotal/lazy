@@ -25,10 +25,12 @@
                                  {% for articulo in articulo_list|dictsort:"id" reversed %}
                                 <tr>
                                     <th><a href="{% url 'articulo:articulo' articulo.id articulo.nombre|slugify  %}">{{articulo.nombre}}</a></th> <!--link al articulo-->
+                                    <div >
                                     <th>{{articulo.tipo}}</th>
-                                    <th>{{articulo.precio}}</th>
-                                    <th>{{articulo.cantidad}}</th>
-                                    <th>{{articulo.get_capital}}
+                                    <th style="text-align: right;">{{articulo.precio}}</th>
+                                    <th style='text-align: right;'>{{articulo.cantidad}}</th>
+                                    <th style='text-align: right;'>$ {{articulo.get_capital}}</th>
+                                    </div>
                                 </tr>
                                   {% endfor %}
                             </tbody>
